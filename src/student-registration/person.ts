@@ -1,8 +1,6 @@
 import { Gender, PersonData } from "./types";
 
-/* illustrate private, public, protected */
-export default class Person{
-
+export class Person{
     private _firstName: string;
     public get firstName(): string {
         return `${this.toTitleCase(this._firstName)}`;
@@ -10,7 +8,6 @@ export default class Person{
     public set firstName(value: string) {
         this._firstName = value;
     }
-
     private _lastName: string;
     public get lastName(): string {
         return `${this.toTitleCase(this._lastName)}`;
@@ -18,15 +15,13 @@ export default class Person{
     public set lastName(value: string) {
         this._lastName = value;
     }
-
-    private _gender: number;
-    public get gender(): number {
+    private _gender: Gender;
+    public get gender(): Gender {
         return this._gender;
     }
-    public set gender(value: number) {
+    public set gender(value: Gender) {
         this._gender = value;
     }
-
     private _height: number;
     public get height(): number {
         return this._height;
@@ -34,7 +29,6 @@ export default class Person{
     public set height(value: number) {
         this._height = value;
     }
-
     private _hobbies: string[];
     public get hobbies(): string[] {
         return this._hobbies;
@@ -42,7 +36,6 @@ export default class Person{
     public set hobbies(value: string[]) {
         this._hobbies = value;
     }
-
     private _birthday: Date;
     public get birthday(): Date {
         return this._birthday;
@@ -50,7 +43,6 @@ export default class Person{
     public set birthday(value: Date) {
         this._birthday = value;
     }
-
     private _isAlive: boolean;
     public get isAlive(): boolean {
         return this._isAlive;
@@ -77,4 +69,5 @@ export default class Person{
         str.toLowerCase();//first set the whole string to lowercase in case
         return str.substring(0,0) + str[0].toUpperCase() + str.substring(1);//replace the first character with its uppercase
     }
-}; 
+
+};

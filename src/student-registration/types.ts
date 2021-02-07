@@ -3,7 +3,7 @@ export enum Gender {
     male = 2
 }
 
-export enum ModeOfEntry {
+export enum ModeOfEntry{
     UTME = 1,
     DirectEntry = 2,
     Transfer = 3
@@ -13,19 +13,19 @@ export interface PersonData {
     firstName: string,
     lastName: string,
     gender: Gender,
-    height?: number, // question mark here means optional
+    height?: number, //question mark here means optional
     hobbies: string[],
-    birthday?: Date,
-    isAlive: boolean,
+    birthday?: Date, //question mark here means optional
+    isAlive: boolean
 }
 
-export interface StudentData {
+export interface StudentData{
     matriculationNumber: string,
     programOfStudy: string,
     department: string,
     yearOfEntry: Date,
     modeOfEntry?: ModeOfEntry,
-    nextOfKin?: any,
-    emailAddress?: any,
-    phoneNumber?: any
+    nextOfKin?: string,
+    emailAddress?: string,
+    phoneNumber?: string
 }

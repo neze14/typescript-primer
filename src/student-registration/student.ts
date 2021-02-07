@@ -1,5 +1,5 @@
-import {StudentData, PersonData} from './types'
-import Person from './person';
+import { Person } from "./person";
+import { PersonData, StudentData } from "./types";
 
 export default class Student extends Person{ //this is inheritance
     private _matriculationNumber: string;
@@ -17,7 +17,7 @@ export default class Student extends Person{ //this is inheritance
     public set programOfStudy(value: string) {
         this._programOfStudy = value;
     }
-    
+
     private _department: string;
     public get department(): string {
         return this.toTitleCase(this._department);
@@ -34,35 +34,35 @@ export default class Student extends Person{ //this is inheritance
         this._yearOfEntry = value;
     }
 
-    private _modeOfEntry: number;
-    public get modeOfEntry(): number {
+    private _modeOfEntry: number | undefined;
+    public get modeOfEntry(): number | undefined {
         return this._modeOfEntry;
     }
-    public set modeOfEntry(value: number) {
+    public set modeOfEntry(value: number | undefined) {
         this._modeOfEntry = value;
     }
 
-    private _nextOfKin: string;
-    public get nextOfKin(): string {
+    private _nextOfKin: string | undefined;
+    public get nextOfKin(): string | undefined {
         return this._nextOfKin;
     }
-    public set nextOfKin(value: string) {
+    public set nextOfKin(value: string | undefined) {
         this._nextOfKin = value;
     }
 
-    private _emailAddress: string;
-    public get emailAddress(): string {
+    private _emailAddress: string | undefined;
+    public get emailAddress(): string | undefined {
         return this._emailAddress;
     }
-    public set emailAddress(value: string) { 
+    public set emailAddress(value: string | undefined) {
         this._emailAddress = value;
     }
-
-    private _phoneNumber: string;
-    public get phoneNumber(): string {
+    
+    private _phoneNumber: string | undefined;
+    public get phoneNumber(): string | undefined {
         return this._phoneNumber;
     }
-    public set phoneNumber(value: string) {
+    public set phoneNumber(value: string | undefined) {
         this._phoneNumber = value;
     }
 
@@ -77,4 +77,4 @@ export default class Student extends Person{ //this is inheritance
         this._programOfStudy = studentData.programOfStudy;
         this._yearOfEntry = studentData.yearOfEntry;
     }
-} 
+}
